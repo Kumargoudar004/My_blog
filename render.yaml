@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: blog-kumar
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn my_site.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: my_site.settings
+      - key: SECRET_KEY
+        value: your-django-secret-key-here
+      - key: DEBUG
+        value: False
+      - key: CLOUDINARY_CLOUD_NAME
+        value: dfre000b8
+      - key: CLOUDINARY_API_KEY
+        value: 149284517355592
+      - key: CLOUDINARY_API_SECRET
+        value: 1KIv6eNkShrU0qaVmiOzFyShHng
