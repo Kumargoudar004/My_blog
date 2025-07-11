@@ -5,11 +5,13 @@ services:
     plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn my_site.wsgi:application"
+    runtime:
+      python: 3.10.13  # 👈 Force compatible Python version
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: my_site.settings
       - key: SECRET_KEY
-        value: your-django-secret-key-here
+        value: igd3-km9f)4m_+965am6xh0#8g8q&76a)c%m6t_km@l3^kydzp
       - key: DEBUG
         value: False
       - key: CLOUDINARY_CLOUD_NAME
